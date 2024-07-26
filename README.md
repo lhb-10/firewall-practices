@@ -5,7 +5,9 @@
 ## Types of Firewall
 
 ![](Image/Types_of_firewall.png)
+
 ## Firewall logs and analysis
+
 ## Bypass Firewall
 
 
