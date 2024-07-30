@@ -16,3 +16,5 @@
 * https://github.com/0xInfection/Awesome-WAF
 * https://www.geeksforgeeks.org/types-of-network-firewall/
 * https://www.geeksforgeeks.org/difference-between-traditional-firewall-and-next-generation-firewall/
+* https://github.com/0xInfection/Awesome-WAF
+* https://github.com/wallarm/api-firewall

@@ -9,6 +9,7 @@
     - [Compare: NGFW and WAF](#compare-ngfw-and-waf)
   - [API Firewall](#api-firewall)
   - [Database firewall - MySQL Enterprise Firewall](#database-firewall---mysql-enterprise-firewall)
+  - [Modesecurity](#modesecurity)
     - [Example - Pfsense](#example---pfsense)
     - [Example - OPNSense](#example---opnsense)
   - [Example](#example)
@@ -223,6 +224,69 @@ Tính năng:
 * Ghi log
 * Tự học và xây dựng allowlist.
 * Hiệu suất cao 
+
+
+Deploy
+* Vị trí đặt WAF 
+  * Các thiết bị WAF cúng thường được đặt sau tường lửa mạng và trước máy chủ ứng dụng web. Việc đặt WAF được thực hiện sao cho tất cả các lưu lượng đến ứng dụng web cần qua WAF trước. Tuy nhiên, đôi khi cũng có ngoại lệ khi WAF chỉ được dung để giám sát cổng đang mở trên máy chỉ web. Ngoài ra, các chương trình WAF còn được cài đặt trực tiếp lên máy chỉ web và thực hiện các chức năng tương tự như các thiết bị WAF là giám sát các lưu lượng đến và ra khỏi ứng dụng web
+
+## Modesecurity 
+WAF and NGFW 
+* What is the Difference Between Web Application Firewall (WAF) and Next-Generation Firewall (NGFW)?
+  * Firewalls represent a crucial piece of technology that monitors and filters incoming or outgoing internet traffic with the ultimate goal of protecting against threats and preventing sensitive data leaks. Businesses and organizations rely on these devices to work consistently and reliably so that they can secure critical resources for infiltration.
+
+  * There are many kinds of firewalls available, and each type has its own functionality and purpose. In this article, we will compare web application firewalls (WAFs) and next-generation firewalls (NGFWs), and then explore ways to include them as part of a comprehensive security solution.
+
+* What Is a Web Application Firewall (WAF)?
+  * A web application firewall (WAF) is a type of firewall that understands a higher protocol level (HTTP or Layer 7) of incoming traffic between a web application and the internet. It is able to detect and respond to malicious requests before they are accepted by web applications and web servers, thus giving businesses an extra layer of security.
+
+  * When using WAFs to protect web applications, you typically define rules that either allow, block or monitor web requests based on certain criteria. For example, you can specify a rule that you need to block all incoming requests from a particular IP or only requests that contain specific HTTP headers or vulnerabilities. If you just want to monitor traffic, you can set up monitors that count certain endpoints. This flexibility allows security administrators to quickly record what is being requested and block unauthorized or unwanted requests when incidents and compromises occur.
+
+  * Due to the fact that WAFs understand a higher level of traffic, they are able to block web application attacks (among other benefits). Many of these attacks are closely related to the OWASP Top 10 list, including cross-site scripting (XSS) attacks, SQL injection, denial-of-service (DoS), and the leakage of credentials or unsafe information.
+
+* What Is an NGFW? 
+  * A next-generation firewall (NGFW) is a type of application firewall that combines the best features of a traditional network firewall and a web application firewall. It typically acts as a firewall that blocks incoming requests by inspecting the network layer packets, but it also has additional inspection capabilities that unlock novel ways to block unwanted traffic on your private network.
+
+  * Some of these capabilities relate to TLS inspection and termination, intrusion detection and prevention, threat intelligence, and the ability to configure advanced filtering rules based on the contents of the traffic or the URLs. The main benefit of this flexibility is that it allows security admins to handle more advanced scenarios and block more sophisticated threats that stem from coordinated attack vectors.
+
+  * Now that you understand the fundamental concepts behind WAFs and NGFWs, we will explain their similarities and differences.
+
+* The Similarities and Differences Between WAFs and NGFWs
+  * It’s fair to say that there is a bit of overlap between WAFs and NGFWs. They both employ rules and policy engines to filter incoming traffic and act based on certain criteria. Both are easier to run these days, and depending on the vendor offering, you won’t need to purchase dedicated hardware to enjoy those features.
+
+  * You might think that they overlap because they both work on application-layer protocols – Layer 7 in particular. That’s true. You can think of NGFWs as extensions of traditional firewalls with the added ability to process traffic from OSI Layers 3-4 and 7 and leverage that information to take action before it reaches an inner layer closer to the application.
+
+  * Their key differences lie in their core responsibility models and overall capabilities. NGFWs capture more network traffic context so that they can prevent incoming attacks before they reach the network layer. They can also combine threat intelligence engines to assist in the decision-making process. WAFs, on the other hand, are confined to the application layer, so they specialize in preventing common web-based attacks like XSS and SQL injections. WAFs cannot be used as primary firewalls for your network, but they are ideal to protect your web applications exposed to the internet. 
+
+* When to Use WAFs vs. NGFWs
+  * You want to use web application firewalls (WAFs) for the following reasons:
+
+    * They protect against attacks that are specific to the application layer. WAFs can inspect application-layer traffic, and they also have the ability to protect against common application-layer attacks. Examples include SQL injection, XSS, DDoS and others on the OWASP Top 10 list.
+
+    * They can help you meet compliance requirements. For example, PCI DSS discusses how WAFs can help meet option 2 of requirement 6 in conjunction with secure coding practices.
+
+    * Next-generation firewall (NGFW) solutions protect against both network- and application-wide attacks. Their key characteristics are:
+
+    * They can monitor many layers (OSI 3-4 and 7). This gives them better context and insight into the type of attack. For example, they can determine which application each packet targets and put extra controls in place. Therefore, an NGFW can be used as a primary firewall.
+
+    * They include sophisticated tools and features. NGFWs can leverage internal or external services in order to prevent attacks. For example, they can load threat intelligence data and automatically reconfigure rules based on new updates.
+
+    * They can inspect SSL traffic. NGFWs can act as SSL termination proxies, so they can inspect incoming and outgoing encrypted traffic before it reaches its destination. You can read more about this feature in this related article.
+
+  * Now that you have a fair idea of when to use a WAF versus a NGFW, let’s see how you can use them both to provide a comprehensive and in-depth defense solution.
+
+* How Do WAFs and NGFWs Complement Each Other?
+  * Given that WAFs are dedicated to protecting web application traffic, they represent the ideal option for protecting web servers. WAFs are not the ultimate solution when it comes to comprehensive security, though, so it’s best if you can combine them with NGFWs.
+
+  * The ideal holistic defense strategy is to have a WAF configured to protect against the OWASP Top 10 attacks with an NGFW acting as a traditional network firewall that is able to detect and prevent certain attacks before they reach the WAF. Using advanced capabilities like IDS/IPS and threat modeling, NGFWs can filter out a massive percentage of attacks and leave the rest for the WAFs to tackle.
+
+* What Customers Should Consider When Searching for a Web Application Security Solution
+  * When searching for a web application security solution, you should consider several factors. First, you need a trusted and reliable vendor that offers a holistic set of tools and services for protecting your web applications. Palo Alto Networks is one such vendor that offers a comprehensive and easy-to-use set of firewalls, including NGFWs  and Web Application and API Security platform, which includes a built-in WAF.
+
+  * Second, you need great documentation and excellent technical support. Developers and security admins rely on reference documentation so they can understand how to properly configure the firewalls that adhere to their security policies. Documentation needs to be up to date, accurate and easily accessible so any implementation of incoming requests can be done efficiently with minimal risk of misconfiguration. Palo Alto Networks docs site is a robust and easy-to-navigate developer documentation site with deep and detailed listings of the features, how to set them up, and version information for compatibility.
+
+
+
 
 ### Example - Pfsense 
 
