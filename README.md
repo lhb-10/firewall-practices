@@ -526,6 +526,8 @@ Python có thể được sử dụng trong nhiều tác vụ liên quan đến 
 
 Các thuật ngữ này giúp hiểu rõ hơn về hướng và nguồn gốc của lưu lượng mạng, từ đó có thể thiết lập các chính sách bảo mật và quản lý mạng hiệu quả hơn.
 
+
+
 ## References 
 * Types of firewalls: https://www.javatpoint.com/types-of-firewall
 * Awesome-WAF: https://github.com/0xInfection/Awesome-WAF
