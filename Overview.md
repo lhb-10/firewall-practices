@@ -342,8 +342,7 @@ WAF and NGFW
   - Packet Filter Firewall
   - Firewall aliases 
   - Firewall rules 
-  - Firewall settings
-  - Diagnostics and troubleshooting
+  - Fir troubleshooting
 - Network Address Translation (NAT)
   - NAT concepts 
   - Port forwarding 
