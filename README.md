@@ -532,3 +532,6 @@ Các thuật ngữ này giúp hiểu rõ hơn về hướng và nguồn gốc c�
 * Types of network Firewalls: https://www.geeksforgeeks.org/types-of-network-firewall/
 * Different between traditional fireall and next generation fireall: https://www.geeksforgeeks.org/difference-between-traditional-firewall-and-next-generation-firewall/
 * API firewalls: https://github.com/wallarm/api-firewall
+* Modesecurity: https://www.youtube.com/watch?v=478ku0_2LvI - https://www.youtube.com/watch?v=5eRxOYbaIEI - https://www.youtube.com/watch?v=xAIpFwdA02s
+* Modesecurity + nginx: https://github.com/owasp-modsecurity/ModSecurity-nginx
+* Nginx documentation: https://docs.nginx.com/
