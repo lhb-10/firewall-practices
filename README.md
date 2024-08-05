@@ -117,8 +117,9 @@ Các hành động này giúp quản trị viên mạng kiểm soát và bảo v
 - Hoạt động ở layer 2,3,4
 - Những khắc phục so với Simple Packet Filter Firewalls
 
-
-![](Image/Day018_Statefull_Firewall.png)
+<div align="center">
+<img src="Image/Day018_Statefull_Firewall.png)\">
+</div>
 
 
 
@@ -130,7 +131,10 @@ Các hành động này giúp quản trị viên mạng kiểm soát và bảo v
 - Source Address
 - Biometric
 
-![](Image/Day018_Application_Firewall.png)
+
+<div align="center">
+<img src ="Image/Day018_Application_Firewall.png">
+</div>
 
 ### Next-Gen Firewall 
 
@@ -169,7 +173,9 @@ Nguyên lý hoạt động
 * Inbound
 * Outbound
 
-![](Image/Day018_Next_GEN_Firewall.png)
+<div align="center">
+<img src="Image/Day018_Next_GEN_Firewall.png">
+</div>
 
 
 ## Firewall logs and analysis
@@ -236,12 +242,13 @@ Web Attack Damage
 
 Why we need to use WAF?
 
+<div align="center">
+<img src="Image/Day018_Example_WAF.png">
+</div>
 
-![](Image/Day018_Example_WAF.png)
-
-
-![](Image/Day018_WAF_Flow.png)
-
+<div align="center">
+<img src="Image/Day018_WAF_Flow.png">
+</div>
 
 ### Compare: NGFW and WAF
 
@@ -259,10 +266,13 @@ NGFW and WAF
 •	MySQL Enterprise Edition includes MySQL Enterprise Firewall, an application-level firewall that enables database administrators to permit or deny SQL statement execution based on matching against lists of accepted statement patterns. This helps harden MySQL Server against attacks such as SQL injection or attempts to exploit applications by using them outside of their legitimate query workload characteristics.
 •	Each MySQL account registered with the firewall has its own statement allowlist, enabling protection to be tailored per account. For a given account, the firewall can operate in recording, protecting, or detecting mode, for training in the accepted statement patterns, active protection against unacceptable statements, or passive detection of unacceptable statements. The diagram illustrates how the firewall processes incoming statements in each mode.
 
+<div align="center">
+<img src="Image/Day018_Database_Firewall.png">
+</div>
 
-![](Image/Day018_Database_Firewall.png)
-
-![](Image/Day018_SQL_Database_Firewall.png)
+<div align="center">
+<img src="Image/Day018_SQL_Database_Firewall.png">
+</div>
 
 
 Multiple operating modes:
@@ -288,7 +298,10 @@ Cơ chế hoạt động:
   * Dựa trên tài khoản: 1 profile - 1 tài khoản cụ thể.
   * Nhóm: nhiều tài khoản là thành viên, allowlist áp dụng như nhau cho tất cả các thành viên.
 
-![](Image/Day018_Databse_Firewall_flow.png)
+
+<div align="center">
+<img src="Image/Day018_Databse_Firewall_flow.png">
+</div>
 
 
 Tính năng:
@@ -307,8 +320,9 @@ Deploy
   * Các thiết bị WAF cúng thường được đặt sau tường lửa mạng và trước máy chủ ứng dụng web. Việc đặt WAF được thực hiện sao cho tất cả các lưu lượng đến ứng dụng web cần qua WAF trước. Tuy nhiên, đôi khi cũng có ngoại lệ khi WAF chỉ được dung để giám sát cổng đang mở trên máy chỉ web. Ngoài ra, các chương trình WAF còn được cài đặt trực tiếp lên máy chỉ web và thực hiện các chức năng tương tự như các thiết bị WAF là giám sát các lưu lượng đến và ra khỏi ứng dụng web
 
 ## API Firewalls
-
-![](Image/Day018_API_Firewall.png)
+<div align="center">
+<img src="Image/Day018_API_Firewall.png">
+</div>
 
 - API firewall là một proxy nhanh và nhẹ để kiểm tra request và response API dựa trên các quy tắc của OpenAPI/Swagger. Nó được thiết kế để bảo vệ các RestAPI endpoint, trong môi trường cloud-native.
 -  Cơ chế hoạt động: sử dụng các model security để cho phép các request và response đúng với những rule trong file định nghĩa (file rule) và từ chối mọi thứ không đúng yêu cầu
